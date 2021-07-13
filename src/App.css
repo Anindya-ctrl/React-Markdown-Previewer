@@ -1,0 +1,117 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+:root {
+  --box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.30);
+}
+
+body {
+    background: darkcyan;
+}
+
+#markdown-previewer {
+    display: flex;
+    flex-direction: row;
+}
+
+#editor {
+    max-height: 98vh;
+    min-height: 98vh;
+    width: 40vw;
+    max-width: 50vw;
+    min-width: 30vw;
+    border: none;
+    border-right: 1px solid black;
+    background: rgb(174, 206, 206);
+    padding-top: 2vh;
+    padding-left: 2vw;
+    padding-bottom: 3vh;
+    box-shadow: var(--box-shadow);
+}
+
+#preview-header {
+    font-weight: 200;
+    font-family: sans-serif, monospace;
+    margin-left: 5vw;
+    background: #4aa3a3;
+    /* border: 1.5px solid black; */
+    box-shadow: var(--box-shadow);
+    overflow: auto;
+    padding: 2px;
+}
+
+#preview {
+    margin-left: 5vw;
+    height: 92vh;
+    max-height: 92vh;
+    width: 50vw;
+    margin-top: -15px;
+    padding-left: 2rem;
+    background: rgb(174, 206, 206);
+    overflow: scroll;
+    box-shadow: var(--box-shadow);
+}
+
+code {
+    background: lightgrey;
+}
+
+pre {
+    background: lightgrey;
+    display: block;
+    padding: 0.8rem;
+    margin-right: 2.5vw;
+    border-radius: 5px;
+}
+
+blockquote {
+    border-left: 4px solid grey;
+    padding-left: 15px;
+}
+
+th {
+    margin: 0;
+    border: 1px solid black;
+    padding: 5px;
+}
+
+td {
+    margin: 0;
+    border: 1px solid black;
+    padding: 5px;
+}
+
+/* ::-webkit-resizer {
+    width: 20px;
+    background: darkcyan;
+    border-radius: 100% 0 0 0;
+} */
+
+@media all and (max-width: 1200px) {
+    #markdown-previewer {
+        flex-direction: column;
+    }
+
+    #editor {
+        min-height: 35vh;
+        min-width: 98.6vw;
+        border: none;
+        padding-top: 2vh;
+        padding-left: 2vw;
+        padding-bottom: 3vh;
+        resize: none;
+    }
+
+    #preview-header {
+        margin-left: 0;
+    }
+
+    #preview {
+        margin-left: 0;
+        height: 60vh;
+        max-height: 60vh;
+        width: 98.5vw;
+        max-width: 98.5;
+    }
+}
